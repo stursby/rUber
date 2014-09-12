@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rUber</title>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body,
+    html {
+        min-height: 100%;
+    }
+    body {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        color: #222;
+        background: #F7F6F2;
+    }
+    img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+    .header {
+        display: flex;
+        background: #fff;
+        padding: 30px;
+        align-items: baseline;
+    }
+    .header__title {
+        display: flex;
+    }
+    .nav {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
+    }
+    .nav__item {
+        margin-left: 30px;
+        text-decoration: none;
+        color: #222;
+    }
+    h1 {
+        font-weight: 700;
+        letter-spacing: -1px;
+        color: #DE3938;
+    }
+    .section {
+        padding: 30px;
+        margin: 50px 0;
+    }
+    .products {
+        width: 100%;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        justify-content: space-around;
+        padding: 0;
+        margin: 25px 0;
+    }
+    .product__item {
+        list-style: none;
+        position: relative;
+        flex-grow: 1;
+        background: #fff;
+        margin: 10px;
+    }
+    .product__details {
+        opacity: 0.4;
+        width: 100%;
+        padding: 10px 12px 8px 12px;
+        background: #F7F6F2;
+    }
+    .product_image {
+        max-height: 15px;
+        width: auto;
+        float: right;
+        margin-top: 3px;
+    }
+    .product__capacity {
+        font-size: 18px;
+    }
+    .product__name {
+        text-align: center;
+        padding: 30px;
+        font-size: 22px;
+    }
+    .icon__person {
+        position: relative;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        top: 1px;
+        background-repeat: no-repeat;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAQAAACR313BAAAA20lEQVQYGQXBvyoEAAAH4O/+RFcWheQJOEcGg4XH4FCKB2BSRuU1DFjPK1Aig3Iy+HOLoriQhZPp7uf7AEoWNTx603JsSRkAJpyIiIiIU1WAca8iIiIiom0Sys5EvIiIiGcR58osizgwYltX9OwYti9itagOmj5cKIALn5pghXsR0dAREb8aIqJV8KPt0qgBf/5ARUXHuzljxB4AAGBXim4tAAAA5t2xJuYAADArNii58m0IADDoy7US1HS9mAbAlCc9MwBVTXFkS92mQ3GjBgB91j2IX9GyoR/4B//dZYikHn02AAAAAElFTkSuQmCC);
+    }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__title">
+            <h1>rUber</h1>
+        </div>
+        <nav class="nav">
+            <a href="https://twitter.com/charliehield" class="nav__item twitter-follow-button" data-show-count="false" data-show-screen-name="true">Follow @charliehield</a>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h1>Products</h1>
+        <ul class="products">
+        <% data['products'].each do |product| %>
+            <li class="product__item">
+                <div class="product__name">
+                    <%= product['display_name'] %>
+                </div>
+                <div class="product__details">
+                    <span class="icon__person"></span>
+                    <span class="product__capacity"><%= product['capacity'] %></span>
+                    <img class="product_image" src="<%= product['image'] %>">
+                </div>
+            </li>
+        <% end %>
+        </ul>
+    </section>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</body>
+</html>
