@@ -26,7 +26,7 @@ Register your App with Uber
 Visit the [Uber API Registration page](https://login.uber.com/applications/new) and sign up. Once you have an app created, set your Server Token as an environment variable.
 
 ```bash
-export SERVER_TOKEN='mytokenhere'
+$ export SERVER_TOKEN='mytokenhere'
 ```
 
 Run the App!
@@ -35,5 +35,5 @@ Run the App!
 Run the following, and you should have a working app on `http://localhost:4567/`.
 
 ```bash
-ruby app.rb
+$ ruby app.rb
 ```
