@@ -3,6 +3,8 @@ rUber
 
 Example app using [Uber’s API](https://www.uber.com/) with Ruby. This demo app simple shows available products based on location. Uber also has more [endpoints here](https://developer.uber.com/v1/endpoints/).
 
+![screenshot](screenshot.png)
+
 Getting started
 ---------------
 
